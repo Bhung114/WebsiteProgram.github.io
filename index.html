@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>dakfsdaksdfajsdfajdf</title>	
+	
+	
+	<style>
+	/* Style indicates CSS block */	
+	h1{
+		color: blue; 
+	}	
+	h2{
+		color: pink;
+	}
+	*{
+	/* the above star means wild card. A wild card applies to everything */
+		box-sizing: border-box;
+	}
+	
+	html, body{
+		height: 100%;
+	}
+	
+	body{
+		padding: 0;
+	}
+	
+	#header{
+		border: 1px solid #300; 
+		width: 100%;
+		height: 12%;
+		text-align: center;
+	}
+	
+	#left{
+		border: 1px solid #000;
+		width: 25%;
+		height: 100%;
+		float: left;
+		text-align: center;
+	}
+	
+	#middle{
+		border: 1px solid #000; 
+		width: 50%;
+		height: 100%;
+		float: left;
+		/* float left means that you shove columns in through the left */
+		text-align: center;
+	}
+	
+	#right{
+		border: 1px solid #000; 
+		width: 25%;
+		height: 100%;
+		float: left;
+		text-align: center;
+	}
+	#gif{
+		margin-top: 50%;
+	}
+	#header{
+		background-image: url("http://i1088.photobucket.com/albums/i337/II-Shadow-II/Gifs/1275555927_cat-vs-printer.gif");
+		background-size: 100% 100%;
+	}
+	
+	</style>
+
+</head>
+<body>
+
+	<div id='header'>
+		<h1 id='title'> Taco taco taco </h1>
+		<p> hey there </p>
+	</div>
+
+	<div id="left">
+	<h2> this is the left </h2>
+		<img id='gif' src="http://i1088.photobucket.com/albums/i337/II-Shadow-II/Gifs/1275555927_cat-vs-printer.gif" style="width:128px;height:128px;">
+		
+	</div>
+	
+	<div id="middle">
+		<h2> this is the middle </h2>
+		
+		<a href="http://ice.cc.gatech.edu/apexam_final/">This is some programming practice</a>
+	</div>
+	
+	<div id = "right">
+		<h2> this is the right </h2>
+		<p> This is the canvas area! </p>
+		<canvas id="myCanvas" width="300" height="300" style="border:1px solid #000000;">
+		</canvas>
+		<a href="http://www.skylit.com/beprepared/fr.html">This is some free response work</a>
+
+</body>
+
+
+<script>
+	//
+/*
+*/
+/*	var canvas = document.getElementById("myCanvas");
+	var context = canvas.getContext("2d");
+		//context is like an import in that it will help us by bringing in what we need to draw ON
+	console.log(context);	
+		//Helps keep track of variables right click on image and inspect and console
+	var sun = new Image();
+*/
+var sun = new Image();
+var moon = new Image();
+var earth = new Image();
+function init() {
+  sun.src = 'https://mdn.mozillademos.org/files/1456/Canvas_sun.png';
+  moon.src = 'https://mdn.mozillademos.org/files/1443/Canvas_moon.png';
+  earth.src = 'https://mdn.mozillademos.org/files/1429/Canvas_earth.png';
+  window.requestAnimationFrame(draw);
+}
+function draw() {
+  var ctx = document.getElementById('myCanvas').getContext('2d');
+  ctx.globalCompositeOperation = 'destination-over';
+  ctx.clearRect(0, 0, 300, 300); // clear canvas
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
+  ctx.strokeStyle = 'rgba(0, 153, 255, 0.4)';
+  ctx.save();
+  ctx.translate(150, 150);
+  // Earth
+  var time = new Date();
+  ctx.rotate( ((2 * Math.PI) / 60) * time.getSeconds() + ((2 * Math.PI) / 60000) * time.getMilliseconds() );
+  ctx.translate(105, 0);
+  ctx.fillRect(0, -12, 50, 24); // Shadow
+  ctx.drawImage(earth, -12, -12);
+  // Moon
+  ctx.save();
+  ctx.rotate( ((2 * Math.PI) / 6) * time.getSeconds() + ((2 * Math.PI) / 6000) * time.getMilliseconds() );
+  ctx.translate(0, 28.5);
+  ctx.drawImage(moon, -3.5, -3.5);
+  ctx.restore();
+  ctx.restore();
+  
+  ctx.beginPath();
+  ctx.arc(150, 150, 105, 0, Math.PI * 2, false); // Earth orbit
+  ctx.stroke();
+ 
+  ctx.drawImage(sun, 0, 0, 300, 300);
+  window.requestAnimationFrame(draw);
+}
+init();
+	
+</script>
+
+</html>
