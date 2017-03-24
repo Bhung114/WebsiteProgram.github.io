@@ -86,23 +86,32 @@
 	<div id="middle">
 		<h2> this is the middle</h2>
 		<h2>    </h2>
-		<a href="http://ice.cc.gatech.edu/apexam_final/">This is some programming practice</a>
+		<a href="http://ice.cc.gatech.edu/apexam_final/">I higly reccommend this multiple choice website</a>
 		<h2>    </h2>
 		<a href="http://www.mrpudaloff.com/uploads/1/4/0/1/14010214/barrons_ap_computer_science_2008-2009_1.pdf">This is a study book</a>
 		<h2>    </h2>
 		<a href="http://codingbat.com/java">Coding Bat is always good help</a>
-		
+		<h2>	</h2>
+		<a href="http://ap-computer-science-guide.github.io/#recursion">This is a little crash course on some of the bigger topics gone over</a>
+		<h2>	</h2>
+		<h2> This section is for computer programming 3</h2>
+		<a href="http://www.eternallyconfuzzled.com/tuts/datastructures/jsw_tut_linklist.aspx">I've found this Linked List explanation and tutorial very helpful</a>
+		<h2>	</h2>
+		<img src='https://digitalsynopsis.com/wp-content/uploads/2015/03/web-designer-developer-jokes-humour-funny-41.jpg';
+		<h2>	</h2>
+
 	</div>
 	
 	<div id = "right">
 		<h2> this is the right </h2>
-		<p> This is the canvas area! </p>
+		<p> This is the free response area! </p>
 		<canvas id="myCanvas" width="300" height="300" style="border:1px solid #000000;">
 		</canvas>
 		<h2>	</h2>
 		<a href="https://apstudent.collegeboard.org/apcourse/ap-computer-science-a/exam-practice">These are the free response practice questions</a>
 		<h2>	</h2>	
 		<a href="http://www.skylit.com/beprepared/fr.html">These are some answers to the free response (the questions can be answered in different ways and not just these)</a>
+		
 
 </body>
 
@@ -111,7 +120,6 @@
 	//
 /*
 */
-
 /*	var canvas = document.getElementById("myCanvas");
 	var context = canvas.getContext("2d");
 		//context is like an import in that it will help us by bringing in what we need to draw ON
@@ -119,7 +127,6 @@
 		//Helps keep track of variables right click on image and inspect and console
 	var sun = new Image();
 */
-
 var sun = new Image();
 var moon = new Image();
 var earth = new Image();
@@ -129,18 +136,14 @@ function init() {
   earth.src = 'https://github.com/Bhung114/WebsiteProgram.github.io/blob/master/pics/IMG_3719.JPG?raw=true';
   window.requestAnimationFrame(draw);
 }
-
 function draw() {
   var ctx = document.getElementById('myCanvas').getContext('2d');
-
   ctx.globalCompositeOperation = 'destination-over';
   ctx.clearRect(0, 0, 300, 300); // clear canvas
-
   ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
   ctx.strokeStyle = 'rgba(0, 153, 255, 0.4)';
   ctx.save();
   ctx.translate(150, 150);
-
   // Earth
   var time = new Date();
   ctx.rotate( ((2 * Math.PI) / 60) * time.getSeconds() + ((2 * Math.PI) / 60000) * time.getMilliseconds() );
@@ -154,7 +157,6 @@ function draw() {
   ctx.translate(0, 28.5);
   ctx.drawImage(moon, -3.5, -3.5, 90, 90);
   ctx.restore();
-
   ctx.restore();
   
   ctx.beginPath();
@@ -162,14 +164,10 @@ function draw() {
   ctx.stroke();
  
   ctx.drawImage(sun, 0, 0, 300, 300);
-
   window.requestAnimationFrame(draw);
 }
-
 init();
 	
-
-
 </script>
 
 </html>
