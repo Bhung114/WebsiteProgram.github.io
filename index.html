@@ -121,7 +121,7 @@ var moon = new Image();
 var earth = new Image();
 function init() {
  sun.src = 'https://s-media-cache-ak0.pinimg.com/736x/88/50/2b/88502b58b2ca3509be47473044fde8cc.jpg';
-  moon.src = 'https://github.com/Bhung114/WebsiteProgram.github.io/blob/master/pics/IMG_0352.JPG?raw=true';
+  moon.src = 'https://github.com/Bhung114/WebsiteProgram.github.io/blob/master/pics/IMG_3719.JPG?raw=true';
   earth.src = 'https://github.com/Bhung114/WebsiteProgram.github.io/blob/master/pics/IMG_3719.JPG?raw=true';
   window.requestAnimationFrame(draw);
 }
@@ -148,7 +148,7 @@ function draw() {
   ctx.save();
   ctx.rotate( ((2 * Math.PI) / 6) * time.getSeconds() + ((2 * Math.PI) / 6000) * time.getMilliseconds() );
   ctx.translate(0, 28.5);
-  ctx.drawImage(moon, -3.5, -3.5, 100, 100);
+  ctx.drawImage(moon, -3.5, -3.5, 90, 90);
   ctx.restore();
 
   ctx.restore();
